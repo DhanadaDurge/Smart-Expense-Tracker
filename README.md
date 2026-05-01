@@ -289,8 +289,8 @@ taskkill /PID <PID> /F
 
 ## 🚀 Deployment
 
-* Backend → Render
-* No separate frontend deployment required
+- Backend → Render  
+- Frontend → Vercel
 
 ---
 
