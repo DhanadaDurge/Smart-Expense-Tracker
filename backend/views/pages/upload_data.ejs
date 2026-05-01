@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpenseIQ - Integrations</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/upload_data.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="background: #060713;">
+
+   <%- include("../partials/navbar") %>
+    
+    <!-- Header Banner -->
+    <header class="page-header" style="padding: 120px 0 60px 0; background: linear-gradient(180deg, rgba(79, 70, 229, 0.05) 0%, transparent 100%); text-align: center;">
+        <div class="container">
+            <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 12px; background: linear-gradient(90deg, #fff 0%, #94a3b8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Add Your Expenses</h1>
+            <p style="font-size: 1.1rem; color: #94a3b8; max-width: 600px; margin: 0 auto;">Choose how you’d like to track your spending</p>
+        </div>
+    </header>
+
+    <section style="padding: 40px 0;">
+        <div class="container">
+            <!-- Compact Layout for 2 Cards -->
+            <div style="display: flex; justify-content: center; gap: 32px; margin-bottom: 60px; flex-wrap: wrap;">
+                
+                <!-- 1. Upload File Section -->
+                <div class="card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 32px; border-radius: 20px; text-align: center; display: flex; flex-direction: column; width: 100%; max-width: 400px; min-height: 420px;">
+                    <div style="font-size: 2.5rem; color: #4f46e5; margin-bottom: 20px;"><i class="fa-solid fa-file-arrow-up"></i></div>
+                    <h3 style="margin-bottom: 12px; font-weight: 700;">Upload File</h3>
+                    <p style="color: #94a3b8; margin-bottom: 24px; font-size: 0.9rem;">Upload your bank file to add your expenses</p>
+                    <div style="margin-top: auto;">
+                        <input type="file" id="bankFileUpload" accept=".csv, .pdf, .xlsx" style="width: 100%; margin-bottom: 16px; font-size: 0.8rem; color: #64748b;">
+                        <button class="btn btn-primary" id="upload-file-btn" style="width: 100%; padding: 12px; border-radius: 10px;">Upload File</button>
+                    </div>
+                </div>
+
+                <!-- 2. Manual Entry Section -->
+                <div class="card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 32px; border-radius: 20px; width: 100%; max-width: 400px; min-height: 420px;">
+                    <div style="font-size: 2.5rem; color: #f59e0b; text-align: center; margin-bottom: 20px;"><i class="fa-solid fa-pen-to-square"></i></div>
+                    <h3 style="text-align: center; margin-bottom: 20px; font-weight: 700;">Add Transaction</h3>
+                    <form action="/add_expense" method="post">
+                        <input type="text" name="title" placeholder="Title" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: #fff; margin-bottom: 12px;">
+                        <input type="number" name="amount" placeholder="Amount" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: #fff; margin-bottom: 12px;">
+                        <select name="category" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: #fff; margin-bottom: 20px;">
+                            <option value="Food">Food</option>
+                            <option value="Transport">Transport</option>
+                            <option value="Shopping">Shopping</option>
+                            <option value="Bills">Bills</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; border-radius: 10px; background: #f59e0b;">Add Expense</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- List Section -->
+            <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; padding: 32px;">
+                <h4 style="margin-bottom: 24px; font-weight: 700; color: #fff;">Recent Expenses</h4>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); text-align: left; color: #64748b; font-size: 0.8rem; text-transform: uppercase;">
+                                <th style="padding: 12px 0;">Title</th>
+                                <th style="padding: 12px 0;">Category</th>
+                                <th style="padding: 12px 0;">Date</th>
+                                <th style="padding: 12px 0; text-align: right;">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% expenses.slice(0,10).forEach(e => { %>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.02);">
+                                    <td style="padding: 16px 0; font-weight: 500;"><%= e.title %></td>
+                                    <td style="padding: 16px 0; color: #94a3b8;"><%= e.category %></td>
+                                    <td style="padding: 16px 0; color: #64748b; font-size: 0.85rem;"><%= new Date(e.date).toLocaleDateString() %></td>
+                                    <td style="padding: 16px 0; text-align: right; font-weight: 700; color: <%= e.type === 'income' ? '#10b981' : '#f43f5e' %>">
+                                        <%= e.type === 'income' ? '+' : '-' %> ₹<%= e.amount.toFixed(2) %>
+                                    </td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <%- include("../partials/footer") %>
+    
+    <script src="/js/script.js"></script>
+    <script src="/js/upload_data.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpenseIQ - Sign Up</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/sign_up.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+</head>
+<body>
+
+
+    <main class="auth-wrapper" style="padding-top: 0;">
+        <div class="bg-orb bg-orb-1" style="top: -150px; left: -150px; opacity: 0.5;"></div>
+        <div class="bg-orb bg-orb-2" style="bottom: -150px; right: 0; opacity: 0.2;"></div>
+        <div class="auth-card">
+            <h2>Create Account</h2>
+            <p>Start tracking your money today</p>
+            
+            <form action="/signup" method="post">
+                <div class="form-group">
+                    <label for="fname">Full Name</label>
+                    <input type="text" name="fname" class="form-input" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" name="email" class="form-input" placeholder="you@example.com" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 24px;">
+                    <label for="phone">Phone Number <span style="font-weight: 400; font-size: 0.8rem; color: var(--text-muted); margin-left: 6px;">(Required for Automatic Tracking)</span></label>
+                    <style>
+                        .iti { width: 100%; display: block; }
+                        .iti__country-list { background-color: #1a1a2e; color: white; border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-sm); white-space: normal; max-width: 350px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); z-index: 10; margin-top: 8px; font-family: 'Inter', sans-serif; }
+                        .iti__country { padding: 10px 14px; transition: 0.2s; font-size: 0.95rem; }
+                        .iti__country.iti__highlight, .iti__country:hover { background-color: rgba(255,255,255,0.1) !important; color: white !important; }
+                        .iti__country-name, .iti__dial-code { color: white; opacity: 0.9; }
+                        .iti__selected-flag { background-color: transparent !important; padding: 0 14px 0 16px; transition: 0.2s; }
+                        .iti__selected-flag:hover { background-color: rgba(255,255,255,0.05) !important; border-radius: var(--radius-sm) 0 0 var(--radius-sm); }
+                        .iti__flag-container { border-right: 1px solid rgba(255,255,255,0.1); }
+                        .iti__arrow { border-top-color: var(--text-muted); }
+                        .iti__arrow--up { border-bottom-color: var(--text-muted); }
+                        #phone { padding-left: 60px !important; }
+                        .iti__divider { border-bottom: 1px solid rgba(255,255,255,0.1); }
+                    </style>
+                    <input type="tel" name="phone" id="phone" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="form-input" placeholder="Create a password" required>
+                </div>
+                <div class="form-group">
+                    <label for="cpassword">Confirm Password</label>
+                    <input type="password" name="confirmPassword" class="form-input" placeholder="Retype your password" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-full" style="margin-top: 10px;">Sign Up</button>
+            </form>
+            
+            <div class="auth-links">
+                Already have an account? <a href="/login">Login</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/script.js"></script>
+    <script src="/js/sign_up.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script>
+        const phoneInputField = document.querySelector("#phone");
+        const phoneInput = window.intlTelInput(phoneInputField, {
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+            initialCountry: "in",
+            preferredCountries: [],
+            separateDialCode: false
+        });
+    </script>
+</body>
+</html>

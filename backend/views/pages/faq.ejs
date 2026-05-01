@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpenseIQ - Knowledge Base (FAQ)</title>
+    <link rel="stylesheet" href="/css/style.css">
+     <link rel="stylesheet" href="/css/faq.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <%- include("../partials/navbar") %>
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h1>Knowledge Base</h1>
+            <p>Answers to common questions about our platform architecture and security.</p>
+        </div>
+    </header>
+
+    <main style="background: var(--bg-body); padding-bottom: 100px;">
+        <section class="section-padding" style="position: relative; overflow: hidden;">
+            <div class="bg-orb bg-orb-1" style="opacity: 0.3; top: 10%; left: -10%;"></div>
+            <div class="bg-orb bg-orb-2" style="opacity: 0.15; bottom: 20%; right: -5%;"></div>
+            
+            <div class="container">
+                <div class="faq-layout">
+                    
+                    <!-- Left Sidebar Hero -->
+                    <div class="faq-sidebar">
+                        <div class="badge">
+                            <i class="fa-solid fa-circle-info"></i> Support Portal
+                        </div>
+                        <h2>Frequently Asked Questions</h2>
+                        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 30px;">
+                            We built ExpenseIQ to be transparent, secure, and incredibly fast. Find answers to common questions about how our smart expense tracker works.
+                        </p>
+                    </div>
+
+                    <!-- Right Side Accordion -->
+                    <div class="faq-wrapper">
+                        
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>What happens if I enter the same expense twice?</span>
+                                <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-content">
+                                    <p>ExpenseIQ automatically checks the date, amount, and merchant name. If you manually log your morning coffee, and later your bank file includes that same coffee, the app will instantly warn you about a possible duplicate so your budget stays perfectly accurate.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Is my financial data secure?</span>
+                                <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-content">
+                                    <p>Yes, absolutely. We use bank-level encryption to protect your information. Your data is always locked down and kept fiercely private.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>How does the file upload feature work?</span>
+                                <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-content">
+                                    <p>You can upload the standard bank statement files that you download from your online bank. Our system automatically reads the dates, descriptions, and amounts for you without needing any special formatting.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>How does the app automatically categorize my spending?</span>
+                                <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-content">
+                                    <p>Our smart system spots common merchant names. For instance, if it sees "Spotify" or "Netflix", it automatically tags it as "Entertainment", while "Uber" goes straight to "Travel".</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Can I create my own spending categories?</span>
+                                <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-content">
+                                    <p>Yes! You can easily change the default labels and create any custom categories that make sense for your personal budget.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Do my charts update in real-time?</span>
+                                <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-content">
+                                    <p>Absolutely. The moment a new expense is added—whether manually, by upload, or via SMS—your dashboard and spending charts immediately update to reflect your true budget.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Support Contact Card -->
+                <div class="faq-contact-card">
+                    <h3 style="font-size: 2rem; margin-bottom: 16px;">Still have questions?</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 1.05rem;">Our support team is always ready to help you gain full control of your finances.</p>
+                    <a href="mailto:support@expenseiq.com" class="btn btn-outline" style="border-color: var(--accent); color: var(--accent);"><i class="fa-solid fa-envelope"></i> Contact Support</a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <%- include("../partials/footer") %>
+    <script src="/js/faq.js"></script>
+</body>
+</html>

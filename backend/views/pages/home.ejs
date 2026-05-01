@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpenseIQ - Smart Expense Tracker</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <%- include("../partials/navbar") %>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+        
+        <div class="container hero-wrapper">
+            <div class="hero-content">
+                <span class="section-tag">Smart Personal Finance</span>
+                <h1>Smart Expense<br>Tracking Made<br>Simple</h1>
+                <p class="hero-subtitle">Take control of your money. Easily track your daily expenses, analyze your spending habits, and secure your financial future.</p>
+                <div class="hero-cta">
+                    <a href="#features" class="btn btn-primary">Discover Features</a>
+                    <a href="#security" class="btn btn-outline">Security Core</a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="hero-stat-box">
+                        <p>Private Tracking</p>
+                        <h3>100%</h3>
+                    </div>
+                    <div class="hero-stat-box">
+                        <p>Bank-Level Security</p>
+                        <h3>Always On</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image-container">
+                <div class="hero-graphic-wrapper">
+                    <!-- Moving Radar/Tech Elements -->
+                    <div class="hud-ring hud-ring-1"></div>
+                    <div class="hud-ring hud-ring-2"></div>
+                    
+                    <!-- Finance/Tech Core Photo -->
+                    <img src="/images/tech_finance_hero.png" class="floating-tech-img" alt="Financial Trading Dashboard" style="border-radius: 24px; box-shadow: 0 0 60px rgba(0, 229, 255, 0.2);">
+                    
+                    <!-- Dynamic CSS Data Equalizer -->
+                    <div class="data-bars">
+                        <div class="data-bar"></div>
+                        <div class="data-bar"></div>
+                        <div class="data-bar"></div>
+                        <div class="data-bar"></div>
+                    </div>
+                    
+                    <!-- Floating Stat Pills (Orbiting the image) -->
+                    <div class="stat-pill pill-1">
+                        <i class="fa-solid fa-bolt"></i>
+                        <span style="color: var(--text-main); font-weight: 500; font-size: 0.8rem;">Instant Entry <span style="color: var(--success); margin-left:6px;">FAST</span></span>
+                    </div>
+                    <div class="stat-pill pill-2">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span style="color: var(--text-main); font-weight: 500; font-size: 0.8rem;">Secure Data <span style="color: var(--text-muted); margin-left:6px;">256-bit</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- WORKFLOW SHOWCASE SECTION -->
+        <section class="section-padding" style="border-bottom: 1px solid var(--border); position: relative; overflow: hidden;">
+            <div class="bg-orb bg-orb-1" style="width: 400px; height: 400px; background: rgba(0, 229, 255, 0.15); top: 50%; left: -10%;"></div>
+            
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 60px;">
+                    <span class="section-tag">Seamless Tracking</span>
+                    <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 700;">From simple tracking to clear insights in seconds.</h2>
+                    <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">No complex setup required. Just enter your expenses or upload a bank file, and we'll automatically build your financial dashboard.</p>
+                </div>
+
+                <div class="showcase-grid">
+                    <!-- 1. THE STEPS -->
+                    <div class="showcase-card">
+                        <h4><span style="color:var(--primary); margin-right:8px;">How It Works</span> 3 Simple Steps</h4>
+                        <div style="display: flex; flex-direction: column; gap: 30px; margin-top: 30px;">
+                            
+                            <div style="display: flex; gap: 16px; align-items: flex-start;">
+                                <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(0, 229, 255, 0.1); border: 1px solid rgba(0, 229, 255, 0.3); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">1</div>
+                                <div>
+                                    <h5 style="color: var(--text-main); font-size: 1.05rem; margin-bottom: 6px;">Get Your Data Ready</h5>
+                                    <p style="color: var(--text-muted); font-size: 0.9rem;">Download your bank statement as a CSV file and prepare to enter expenses manually.</p>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; gap: 16px; align-items: flex-start;">
+                                <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 0, 122, 0.1); border: 1px solid rgba(255, 0, 122, 0.3); color: var(--accent); display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">2</div>
+                                <div>
+                                    <h5 style="color: var(--text-main); font-size: 1.05rem; margin-bottom: 6px;">Add Your Data</h5>
+                                    <p style="color: var(--text-muted); font-size: 0.9rem;">Upload your CSV file or enter your expenses manually in the system.</p>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; gap: 16px; align-items: flex-start;">
+                                <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(138, 43, 226, 0.1); border: 1px solid rgba(138, 43, 226, 0.3); color: var(--accent-purple); display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">3</div>
+                                <div>
+                                    <h5 style="color: var(--text-main); font-size: 1.05rem; margin-bottom: 6px;">View Your Dashboard</h5>
+                                    <p style="color: var(--text-muted); font-size: 0.9rem;">Track your expenses and analyze your spending through the dashboard.</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- 2. DIAGRAM / PHOTO -->
+                    <div class="showcase-card" style="padding: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; position: relative;">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(14,18,42,0.1), rgba(14,18,42,0.9)); z-index: 1;"></div>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1500&auto=format&fit=crop" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl);" alt="Analytics Diagram">
+                        <div style="position: absolute; bottom: 30px; left: 30px; z-index: 2;">
+                            <h4 style="color: var(--text-main); margin-bottom: 5px; font-size: 1.1rem;"><i class="fa-solid fa-chart-pie" style="color: var(--primary); margin-right: 8px;"></i>Your Spending Analytics</h4>
+                            <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem;">Automatically generated visual reports.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES PREVIEW SECTION -->
+        <section id="features" class="section-padding">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 60px;">
+                    <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 700; margin-bottom: 16px;">Take full control of your finances</h2>
+                    <p style="color: var(--text-muted); max-width: 650px; margin: 0 auto; line-height: 1.8;">Built with your privacy in mind, our app focuses on one thing: helping you manage your money, stick to your budget, and save more easily.</p>
+                </div>
+                
+                <div class="grid-3">
+                    <div class="card">
+                        <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3>Smart Auto-Categorization</h3>
+                        <p class="text-muted mt-2" style="font-size: 0.9rem; color: var(--text-muted);">Instantly sort your expenses into categories like Food, Travel, and Bills.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon" style="color: var(--primary);"><i class="fa-solid fa-cubes"></i></div>
+                        <h3>Visual Analytics</h3>
+                        <p class="text-muted mt-2" style="font-size: 0.9rem; color: var(--text-muted);">Understand your cash flow with beautiful, easy-to-read charts and graphs.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon" style="color: var(--accent);"><i class="fa-solid fa-bolt"></i></div>
+                        <h3>CSV Data Upload</h3>
+                        <p class="text-muted mt-2" style="font-size: 0.9rem; color: var(--text-muted);">Easily import your bank statements via CSV or enter them manually.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon" style="color: var(--primary);"><i class="fa-solid fa-check-double"></i></div>
+                        <h3>Duplicate Detection</h3>
+                        <p class="text-muted mt-2" style="font-size: 0.9rem; color: var(--text-muted);">Never log the same expense twice with our smart warning system.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon" style="color: var(--accent);"><i class="fa-solid fa-layer-group"></i></div>
+                        <h3>Multi-Device Access</h3>
+                        <p class="text-muted mt-2" style="font-size: 0.9rem; color: var(--text-muted);">Access your dashboard securely from your laptop, tablet, or phone.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon" style="color: var(--accent-purple);"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3>Bank-Grade Security</h3>
+                        <p class="text-muted mt-2" style="font-size: 0.9rem; color: var(--text-muted);">Your financial data is encrypted and kept fiercely private.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECONDARY FEATURE BLOCK (Matching the "Fully decentralized" part of the image) -->
+        <section id="security" class="section-padding" style="border-top: 1px solid var(--border);">
+            <div class="container hero-wrapper">
+                <div class="hero-image-container" style="justify-content: center; height: 350px;">
+                    <div style="width: 200px; height: 200px; background: rgba(0, 229, 255, 0.05); border: 1px solid var(--primary); border-radius: 20px; box-shadow: 0 0 50px rgba(0, 229, 255, 0.15); display: flex; align-items: center; justify-content: center; position: relative; transform: rotate(45deg);">
+                        <i class="fa-solid fa-cube" style="font-size: 4rem; color: var(--primary); text-shadow: 0 0 20px var(--primary); transform: rotate(-45deg);"></i>
+                        <div style="position: absolute; top: -15px; right: -15px; width: 40px; height: 40px; background: var(--accent); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--text-main); transform: rotate(-45deg); box-shadow: 0 0 20px var(--accent);"><i class="fa-solid fa-check"></i></div>
+                    </div>
+                </div>
+
+                <div class="hero-content">
+                    <h2 style="text-align: left; margin-bottom: 24px;">Complete Privacy.<br>Total Security.</h2>
+                    <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 24px;">We know how important your financial data is. That's why we use state-of-the-art encryption to ensure your personal tracking data remains absolutely private.</p>
+                    
+                    <div style="display: flex; gap: 40px;">
+                        <div style="display: flex; gap: 12px; align-items: flex-start;">
+                            <i class="fa-solid fa-shield-check" style="color: var(--primary); font-size: 1.2rem; margin-top: 4px;"></i>
+                            <div>
+                                <h4 style="font-size: 0.95rem; margin-bottom: 4px;">Local Storage</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">Your data stays with you</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 12px; align-items: flex-start;">
+                            <i class="fa-solid fa-lock" style="color: var(--accent); font-size: 1.2rem; margin-top: 4px;"></i>
+                            <div>
+                                <h4 style="font-size: 0.95rem; margin-bottom: 4px;">100% Private</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">We never sell your data</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <%- include("../partials/footer") %>
+    
+    <script src="/js/home.js"></script>
+</body>
+</html>

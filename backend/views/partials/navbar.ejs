@@ -1,0 +1,38 @@
+<!-- REAL WEBSITE NAVBAR -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div style="display: flex; align-items: center; gap: 24px;">
+                <a href="/home" class="logo">
+                    <i class="fa-solid fa-wallet"></i>
+                    ExpenseIQ
+                </a>
+                <% if (typeof user !== 'undefined' && user) { %>
+                    <button class="btn btn-outline" onclick="toggleSidebar()" title="Profile Menu" style="border-radius: 50px; padding: 6px 16px; border-color: rgba(255,255,255,0.1); background: rgba(0,0,0,0.3);">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <div style="width: 24px; height: 24px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--accent-purple)); display: flex; justify-content: center; align-items: center; color: #fff; font-weight: 800; font-size: 0.75rem;"><%= user.name.charAt(0).toUpperCase() %></div>
+                            <span><%= user.name %></span>
+                            <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; color: var(--text-muted);"></i>
+                        </div>
+                    </button>
+                <% } %>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="/home" class="<%= typeof currentPage !== 'undefined' && currentPage === 'home' ? 'active' : '' %>">Home</a></li>
+                <li><a href="/dashboard" class="<%= typeof currentPage !== 'undefined' && currentPage === 'dashboard' ? 'active' : '' %>">Dashboard</a></li>
+                <li><a href="/features" class="<%= typeof currentPage !== 'undefined' && currentPage === 'features' ? 'active' : '' %>">Features</a></li>
+                <li><a href="/about" class="<%= typeof currentPage !== 'undefined' && currentPage === 'about' ? 'active' : '' %>">About</a></li>
+                <li><a href="/faq" class="<%= typeof currentPage !== 'undefined' && currentPage === 'faq' ? 'active' : '' %>">FAQ</a></li>
+                <li><a href="/upload_data" class="<%= typeof currentPage !== 'undefined' && currentPage === 'upload_data' ? 'active' : '' %>">Upload Data</a></li>
+            </ul>
+            
+            <div class="nav-buttons">
+                <% if (!user) { %>
+                    <a href="/login" class="btn btn-primary">Login</a>
+                <% } %>
+            </div>
+        </div>
+    </nav>
+    <% if (typeof isDocked === 'undefined' || !isDocked) { %>
+        <%- include("../partials/sidebar") %>
+    <% } %>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpenseIQ - Login</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            border-radius: 10px;
+            background: rgba(255, 0, 122, 0.9);
+            color: white;
+            font-weight: 500;
+            display: none;
+            z-index: 2000;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: slideIn 0.3s ease-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div id="notification" class="notification"></div>
+
+
+    <main class="auth-wrapper" style="padding-top: 0;">
+        <div class="bg-orb bg-orb-1" style="top: -150px; left: -150px; opacity: 0.5;"></div>
+        <div class="bg-orb bg-orb-2" style="bottom: -150px; right: 0; opacity: 0.2;"></div>
+        <div class="auth-card">
+            <h2>Welcome Back</h2>
+            <p>Enter your credentials to access the dashboard</p>
+            
+            <form id="loginForm" action="/login" method="post">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" name="email" class="form-input" placeholder="you@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" class="form-input" placeholder="••••••••" required>
+                </div>
+                
+                <div style="text-align: right; margin: -10px 0 20px;">
+                    <a href="#" style="font-size: 0.85rem; color: var(--primary); font-weight: 500;">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">Log In</button>
+            </form>
+            
+            <div class="auth-links">
+                Don't have an account? <a href="/sign_up">Sign up</a>
+            </div>
+        </div>
+    </main>
+
+    
+            <div class="footer-bottom">
+                <p>&copy; 2026 ExpenseIQ. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+         
+    <script src="/js/script.js"></script>
+    <script src="/js/login.js"></script>
+</body>
+</html>

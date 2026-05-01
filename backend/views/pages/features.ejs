@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features – ExpenseIQ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/features.css">
+</head>
+<body>
+
+    <%- include("../partials/navbar") %>
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+        <div class="container">
+            <span class="tag">Features</span>
+            <h1>Everything you need to track smarter</h1>
+            <p>Two ways to capture expenses, AI deduplication, and clear visual insights — all in one place.</p>
+        </div>
+    </div>
+
+    <main>
+        <section class="features-wrap">
+            <div class="container">
+
+                <!-- How you add expenses -->
+                <span class="sub-label">How you add expenses</span>
+                <div class="methods-grid" style="grid-template-columns: repeat(2, 1fr);">
+                    <div class="method-card">
+                        <div class="m-icon c2"><i class="fa-solid fa-pen-to-square"></i></div>
+                        <h3>Manual Entry</h3>
+                        <p>Add cash payments or any expense not captured automatically. AI picks the right category for you.</p>
+                        <span class="m-badge mb2">On-demand</span>
+                    </div>
+                    <div class="method-card">
+                        <div class="m-icon c3"><i class="fa-solid fa-file-csv"></i></div>
+                        <h3>CSV Upload</h3>
+                        <p>Download your bank statement at month-end and upload it. We parse and merge it with your existing data.</p>
+                        <span class="m-badge mb3">Month-end</span>
+                    </div>
+                </div>
+
+                <!-- AI Banner -->
+                <div class="ai-banner">
+                    <div class="ai-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <div>
+                        <h3>AI Duplicate Detection — across all sources</h3>
+                        <p>Before saving any transaction, AI cross-checks it against your full history. No double-counting, ever.</p>
+                        <div class="chk-row">
+                            <span class="chk"><i class="fa-solid fa-check"></i> Same amount</span>
+                            <span class="chk"><i class="fa-solid fa-check"></i> Similar merchant</span>
+                            <span class="chk"><i class="fa-solid fa-check"></i> Close timestamp</span>
+                            <span class="chk"><i class="fa-solid fa-check"></i> Cross-source matching</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Features -->
+                <span class="sub-label mt-40">Core features</span>
+                <div class="tiles-grid">
+                    <div class="tile">
+                        <i class="fa-solid fa-tags" style="color:var(--primary);"></i>
+                        <h4>Auto-Categorization</h4>
+                        <p>AI assigns categories like Food, Travel, Bills instantly — no tagging needed.</p>
+                    </div>
+                    <div class="tile">
+                        <i class="fa-solid fa-chart-pie" style="color:#bf7fff;"></i>
+                        <h4>Visual Analytics</h4>
+                        <p>Charts show exactly where your money goes each month.</p>
+                    </div>
+                    <div class="tile">
+                        <i class="fa-solid fa-calendar-check" style="color:var(--accent);"></i>
+                        <h4>Monthly Reports</h4>
+                        <p>Auto-generated summaries with totals by category and savings rate.</p>
+                    </div>
+                    <div class="tile">
+                        <i class="fa-solid fa-layer-group" style="color:#f59e0b;"></i>
+                        <h4>Multi-Device</h4>
+                        <p>Access your dashboard from any browser — phone, tablet, or laptop.</p>
+                    </div>
+                </div>
+
+                <!-- Comparison Table -->
+                <div class="compare-wrap">
+                    <h2>Input methods at a glance</h2>
+                    <table class="cmp-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th><i class="fa-solid fa-pen-to-square"></i> Manual</th>
+                                <th><i class="fa-solid fa-file-csv"></i> CSV</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AI categorization</td>
+                                <td><i class="fa-solid fa-check y"></i></td>
+                                <td><i class="fa-solid fa-check y"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Duplicate detection</td>
+                                <td><i class="fa-solid fa-check y"></i></td>
+                                <td><i class="fa-solid fa-check y"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Cash transactions</td>
+                                <td><i class="fa-solid fa-check y"></i></td>
+                                <td><i class="fa-solid fa-xmark n"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Bulk import</td>
+                                <td><i class="fa-solid fa-xmark n"></i></td>
+                                <td><i class="fa-solid fa-check y"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Effort level</td>
+                                <td><span class="part">Minimal</span></td>
+                                <td><span class="part">Minimal</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <div class="cta-wrap">
+            <div class="container">
+                <h2>Ready to get started?</h2>
+                <p>Takes under 2 minutes to set up. No credit card needed.</p>
+                <div class="cta-btns">
+                    <a href="/upload_data" class="btn btn-primary"><i class="fa-solid fa-bolt"></i> Start Tracking</a>
+                    <a href="/dashboard" class="btn btn-outline"><i class="fa-solid fa-chart-pie"></i> View Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <%- include("../partials/footer") %>
+    <script src="/js/features.js"></script>
+</body>
+</html>

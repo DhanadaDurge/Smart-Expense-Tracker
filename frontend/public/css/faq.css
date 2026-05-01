@@ -1,0 +1,166 @@
+/* Premium FAQ CSS */
+:root {
+    --nav-height: 70px;
+    --accent-purple: #8a2be2;
+    --border: rgba(255,255,255,0.1);
+    --radius-lg: 12px;
+    --radius-xl: 20px;
+    --primary: #00e5ff;
+    --text-main: #ffffff;
+    --text-muted: #aaa;
+    --transition: all 0.3s ease;
+    --bg-body: #0e122a;
+}
+
+.faq-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: start;
+    position: relative;
+    z-index: 2;
+}
+
+.faq-sidebar {
+    position: sticky;
+    top: calc(var(--nav-height) + 40px);
+}
+
+.faq-sidebar .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: rgba(138, 43, 226, 0.1);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    border-radius: 20px;
+    color: var(--accent-purple);
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.faq-sidebar h2 {
+    font-size: clamp(2rem, 3vw, 3rem);
+    text-align: left;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #fff, rgba(255,255,255,0.6));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.faq-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.faq-item:hover {
+    border-color: rgba(0, 229, 255, 0.3);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 24px;
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.faq-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(0, 229, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+/* We write a pseudo-class .active for JS or just rely on the existing standard. Assuming JS toggles .active on .faq-item */
+.faq-item.active {
+    border-color: var(--primary);
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.1);
+}
+
+.faq-item.active .faq-icon {
+    background: var(--primary);
+    color: #000;
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-content {
+    padding: 0 24px 24px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.faq-contact-card {
+    margin-top: 80px;
+    background: linear-gradient(135deg, rgba(14, 18, 42, 0.8), rgba(0,0,0,0.5));
+    border: 1px solid rgba(255, 0, 122, 0.2);
+    border-radius: var(--radius-xl);
+    padding: 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (max-width: 900px) {
+    .faq-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .faq-sidebar {
+        position: relative;
+        top: 0;
+    }
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #0e122a;
+    color: white;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-padding {
+    padding: 60px 0;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpenseIQ - About Us</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="/css/about.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <%- include("../partials/navbar") %>
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h1>Our Mission & Vision</h1>
+            <p>We are building the smartest, most user-friendly way to manage your money.</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Project Overview -->
+        <section class="section-padding" style="background: var(--bg-body);">
+            <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                <div>
+                    <!-- FinTech thematic abstract data image -->
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" style="width: 100%; border-radius: var(--radius-xl); box-shadow: var(--shadow-md);" alt="Data Network">
+                </div>
+                <div>
+                    <span class="section-tag">Our Story</span>
+                    <h2 style="text-align: left;">Clarity over chaos.</h2>
+                    <p style="margin-bottom: 24px; font-size: 1.05rem; line-height: 1.8;">ExpenseIQ started because we were tired of how complicated and overwhelming budget apps had become. We realized that existing software required too much manual effort just to see where our money was going. So, we built a smart expense tracker that sorts and alerts you automatically, helping you save more and stress less.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="section-padding" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+            <div class="container text-center">
+                <h2>How It Works</h2>
+                <div class="section-line" style="margin: 16px auto 40px;"></div>
+                
+                <div class="grid-3" style="margin-top: 60px;">
+                    <div style="padding: 24px;">
+                        <div class="card-icon" style="margin: 0 auto 24px; background: rgba(16, 185, 129, 0.1); color: var(--success);"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                        <h3 style="font-size: 1.3rem;">1. Add Expenses</h3>
+                        <p>Easily add your spending through quick manual entry, uploading a bank file, or our automatic SMS tracker.</p>
+                    </div>
+                    <div style="padding: 24px;">
+                        <div class="card-icon" style="margin: 0 auto 24px; background: rgba(99, 102, 241, 0.1); color: var(--primary);"><i class="fa-solid fa-microchip"></i></div>
+                        <h3 style="font-size: 1.3rem;">2. We Sort It</h3>
+                        <p>Our app automatically organizes your purchases into clean categories and warns you if you enter something twice.</p>
+                    </div>
+                    <div style="padding: 24px;">
+                        <div class="card-icon" style="margin: 0 auto 24px; background: rgba(139, 92, 246, 0.1); color: var(--accent);"><i class="fa-solid fa-chart-pie"></i></div>
+                        <h3 style="font-size: 1.3rem;">3. See Your Progress</h3>
+                        <p>View beautiful, easy-to-read charts that help you understand your spending habits and hit your savings goals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits -->
+        <section class="section-padding" style="background: var(--bg-body);">
+            <div class="container text-center">
+                <h2>Why Choose ExpenseIQ</h2>
+                <div class="section-line" style="margin: 16px auto 40px;"></div>
+                
+                <div style="max-width: 800px; margin: 0 auto; text-align: left;">
+                    <div class="card" style="margin-bottom: 24px; display: flex; gap: 24px; align-items: flex-start;">
+                        <i class="fa-solid fa-shield-halved" style="font-size: 2rem; color: var(--primary);"></i>
+                        <div>
+                            <h4>Bank-Level Privacy</h4>
+                            <p style="margin-top: 8px;">We treat your financial data with intense care. Everything is securely encrypted and kept private.</p>
+                        </div>
+                    </div>
+                    <div class="card" style="margin-bottom: 24px; display: flex; gap: 24px; align-items: flex-start;">
+                        <i class="fa-solid fa-clock-rotate-left" style="font-size: 2rem; color: var(--primary);"></i>
+                        <div>
+                            <h4>Save Hours of Effort</h4>
+                            <p style="margin-top: 8px;">Stop spending your weekends updating messy spreadsheets. Our smart tracking does the heavy lifting for you.</p>
+                        </div>
+                    </div>
+                    <div class="card" style="display: flex; gap: 24px; align-items: flex-start;">
+                        <i class="fa-solid fa-money-bill-trend-up" style="font-size: 2rem; color: var(--primary);"></i>
+                        <div>
+                            <h4>Hit Your Savings Goals</h4>
+                            <p style="margin-top: 8px;">Our duplicate warnings and friendly spending insights catch wasted money, helping you save more every single month.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <%- include("../partials/footer") %>
+    <script src="/js/about.js"></script>
+</body>
+</html>
