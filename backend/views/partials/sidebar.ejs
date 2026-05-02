@@ -17,6 +17,9 @@
         opacity: 1;
         visibility: visible;
     }
+    .sidebar-overlay-docked {
+        display: none !important;
+    }
 
     /* Contrasting Sidebar Background */
     .sidebar {
@@ -24,10 +27,12 @@
         left: -340px; 
         top: 0;
         height: 100vh;
+        height: 100dvh;
         width: 300px;
         background: #10121F; /* Slightly cleaner dark for dock mode */
         border-right: 1px solid rgba(255, 255, 255, 0.05); 
         padding: 24px;
+        padding-bottom: 40px; /* Added padding to ensure sign out is visible */
         display: flex;
         flex-direction: column;
         z-index: 1100;
@@ -182,15 +187,57 @@
         background: rgba(244, 63, 94, 0.1);
         color: #f43f5e;
     }
+
+    /* Docked Sidebar State (Dashboard) */
+    @media (min-width: 1025px) {
+        .sidebar-docked {
+            position: relative !important;
+            left: 0 !important;
+            height: calc(100vh - 90px) !important;
+            height: calc(100dvh - 90px) !important;
+            width: 300px !important;
+            min-width: 300px !important;
+            flex-shrink: 0 !important;
+            box-shadow: none !important;
+            border-top: none !important;
+            z-index: 10 !important;
+            padding-bottom: 24px !important;
+        }
+        
+        .sidebar-docked .sidebar-header {
+            display: none !important;
+        }
+    }
+
+    /* On mobile, even if it's "docked" in EJS, we want it to be a drawer */
+    @media (max-width: 1024px) {
+        .sidebar-docked {
+            position: fixed !important;
+            left: -340px !important;
+            height: 100vh !important;
+            height: 100dvh !important;
+            width: 300px !important;
+            z-index: 1100 !important;
+            transition: left 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+        }
+        .sidebar-docked.open {
+            left: 0 !important;
+        }
+        .sidebar-overlay-docked.open {
+            display: block !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+    }
 </style>
 
 <!-- Overlay -->
-<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()" <%= typeof isDocked !== 'undefined' && isDocked ? 'style="display:none !important;"' : '' %>></div>
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()" <%= typeof isDocked !== 'undefined' && isDocked ? 'class="sidebar-overlay sidebar-overlay-docked"' : 'class="sidebar-overlay"' %>></div>
 
 <!-- Drawer -->
-<aside class="sidebar" id="profileSidebar" <%= typeof isDocked !== 'undefined' && isDocked ? 'style="position:relative !important; left:0 !important; height: calc(100vh - 90px) !important; width:300px; min-width: 300px !important; flex-shrink: 0 !important; box-shadow:none !important; border-top:none; z-index:10;"' : '' %>>
+<aside class="sidebar <%= (typeof isDocked !== 'undefined' && isDocked) ? 'sidebar-docked' : '' %>" id="profileSidebar">
     
-    <div class="sidebar-header" <%= typeof isDocked !== 'undefined' && isDocked ? 'style="display:none !important;"' : '' %>>
+    <div class="sidebar-header">
         <a href="/home" class="sidebar-logo">
             <i class="fa-solid fa-wallet"></i>
             ExpenseIQ

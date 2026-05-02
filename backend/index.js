@@ -43,9 +43,11 @@ app.use((req, res, next) => {
 // ROUTES
 const authRoutes = require("./routes/authRoutes");
 const expenseRoutes = require("./routes/expenseRoutes");
+const aiRoutes = require("./routes/aiRoutes");
 
 app.use("/", authRoutes); 
 app.use("/", expenseRoutes);
+app.use("/api", aiRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
